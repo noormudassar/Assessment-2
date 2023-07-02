@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,24 +18,27 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((accum, current) => {
+  return accum + current.price;
+}, 0);
 
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +56,9 @@ const cart = [
 */
 
 //CODE HERE
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+  return (cartTotal - couponValue) * tax;
+}
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +82,21 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    
+    // name: string
+    This value is needed to ensure we know who the customer is. 
+
+    // address: string
+    This value lets us know where the products are being sent to for shipping. 
+
+    // accountNumber: number
+    Having an account number is useful in retrieving a customer's past orders and helps with identification of them
+
+    // emailAddress: string
+    Used for logging in and useful in notifying customer on updates regarding their order
+
+    // orderStatus: boolean
+    The order status is true of false, either the order has been fulfilled or not
 
 */
 
@@ -88,3 +106,11 @@ const cart = [
 */
 
 //CODE HERE
+
+let customer = {
+  name: "DJ",
+  address: "187 Shore Lane",
+  accountNumber: 13579,
+  emailAddress: "dj@hackbright.com",
+  orderStatus: true,
+};
